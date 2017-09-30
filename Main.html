@@ -2,10 +2,31 @@
 <html>
 <head>
   <link rel="stylesheet" href="style.css"/>
+  <script src= "script.js"></script>
 </head>
 <body>
   <div class="headingBanner">
     <h1>Dhruv Singh</h1>
+    <div id="txt"></div>
+  </div>
+  <div>
+    <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+  }
+  function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+  }
+  </script>
   </div>
   <div class="paragraphBanner">
     <p> I am a great student. Number 1 guy.</p>
@@ -27,9 +48,19 @@
         </ol>
       </li>
     </ul>
+    <p>Tell me a little bit about yourself :0)</p>
+    Social Security Number:<br>
+    <input type="text" name="ssn" id="ssn">
+    <br>
+    Bank Account Number:<br>
+    <input type="text" name="bn" id="bn">
+    <br><br>
+    <button onclick="displayName()">Click Here and Nothing will happen :)</button>
+  <p id="demo"></p>
     <p><div class="decorated">Here's a picture of me:</div></p>
     <img src="https://pbs.twimg.com/media/DG9ipOPVYAAsyFV.jpg">
   </div>
-</body>
 
+<body onload="startTime()"></body>
+</body>
 </html>
