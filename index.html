@@ -16,10 +16,11 @@
       var h = today.getHours();
       var m = today.getMinutes();
       var s = today.getSeconds();
+      var n = today.getMilliseconds();
       m = checkTime(m);
       s = checkTime(s);
       document.getElementById('txt').innerHTML =
-      h + ":" + m + ":" + s;
+      h + ":" + m + ":" + s + ":" + n;
       var t = setTimeout(startTime, 500);
   }
   function checkTime(i) {
